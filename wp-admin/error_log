@@ -1,0 +1,73 @@
+[14-Sep-2015 07:34:27 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/lang.php on line 44
+[14-Sep-2015 07:34:27 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:34:27 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:34:27 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/app/home.php on line 51
+[14-Sep-2015 07:36:00 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/lang.php on line 44
+[14-Sep-2015 07:36:00 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:36:00 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:36:01 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/app/home.php on line 51
+[14-Sep-2015 07:36:10 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/app/home.php on line 51
+[14-Sep-2015 07:36:20 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/lang.php on line 44
+[14-Sep-2015 07:36:20 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:36:20 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/plugin_setup.php on line 179
+[14-Sep-2015 07:36:21 UTC] PHP Warning:  array_rand() expects parameter 1 to be array, null given in /home/electeqi/public_html/findskill.in/hmc/wp-content/plugins/cj-supportezzy/modules/functions/app/home.php on line 51
+[15-Sep-2015 15:06:37 UTC] WordPress database error Table 'electeqi_wp644.da_hmc_p2p' doesn't exist for query UPDATE
+					da_hmc_postmeta pm
+						JOIN
+					da_hmc_p2p p2p
+						ON (
+							p2p.p2p_to = pm.meta_value
+								AND
+							pm.meta_key = '_rtbiz_hd_created_by'
+								AND
+							p2p.p2p_type = 'contact_to_user'
+							)
+					SET pm.meta_value =  p2p.p2p_from made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('after_setup_theme'), call_user_func_array, Rtbiz_Admin->init_rtlib, Rt_Mailbox->__construct, Rt_Mailbox->db_upgrade, RT_DB_Update->do_upgrade, do_action('rt_db_update_finished'), call_user_func_array, Rtbiz_HD_Ticket_Creator_Migration->init, Rtbiz_HD_Ticket_Creator_Migration->ticket_creator_migration
+[15-Sep-2015 15:06:37 UTC] WordPress database error Table 'electeqi_wp644.da_hmc_rt_wp_hd_ticket_index' doesn't exist for query UPDATE
+				da_hmc_rt_wp_hd_ticket_index ti
+					JOIN
+				da_hmc_p2p p2p
+					ON (
+						p2p.p2p_to = ti.user_created_by
+							AND
+						p2p.p2p_type = 'contact_to_user'
+						)
+				SET ti.user_created_by =  p2p.p2p_from made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('after_setup_theme'), call_user_func_array, Rtbiz_Admin->init_rtlib, Rt_Mailbox->__construct, Rt_Mailbox->db_upgrade, RT_DB_Update->do_upgrade, do_action('rt_db_update_finished'), call_user_func_array, Rtbiz_HD_Ticket_Creator_Migration->init, Rtbiz_HD_Ticket_Creator_Migration->ticket_creator_migration
+[15-Sep-2015 15:06:37 UTC] WordPress database error Table 'electeqi_wp644.da_hmc_p2p' doesn't exist for query 
+					INSERT INTO
+						da_hmc_commentmeta
+							(comment_id,meta_key,meta_value)
+									SELECT
+										cmt.comment_post_ID, '_rtbiz_hd_followup_author', p2p.p2p_from
+											FROM
+											da_hmc_comments cmt
+											JOIN
+											da_hmc_p2p p2p
+												ON ( p2p.p2p_to = cmt.user_id AND p2p.p2p_type = 'contact_to_user'  )
+											JOIN
+											da_hmc_posts posts
+												ON (
+														cmt.comment_post_ID = posts.ID
+													AND
+														posts.post_type = 'ticket'
+													)
+								 made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('after_setup_theme'), call_user_func_array, Rtbiz_Admin->init_rtlib, Rt_Mailbox->__construct, Rt_Mailbox->db_upgrade, RT_DB_Update->do_upgrade, do_action('rt_db_update_finished'), call_user_func_array, Rtbiz_HD_Ticket_Creator_Migration->init, Rtbiz_HD_Ticket_Creator_Migration->ticket_creator_migration
+[15-Sep-2015 15:06:37 UTC] WordPress database error Table 'electeqi_wp644.da_hmc_p2p' doesn't exist for query 
+					INSERT INTO
+						da_hmc_commentmeta
+							(comment_id,meta_key,meta_value)
+									SELECT
+										cmt.comment_post_ID, '_rtbiz_hd_followup_author', p2p.p2p_from
+											FROM
+											da_hmc_comments cmt
+											JOIN
+											da_hmc_p2p p2p
+												ON ( p2p.p2p_to = cmt.user_id AND p2p.p2p_type = 'contact_to_user'  )
+											JOIN
+											da_hmc_posts posts
+												ON (
+														cmt.comment_post_ID = posts.ID
+													AND
+														posts.post_type = 'ticket'
+													)
+								 made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('after_setup_theme'), call_user_func_array, Rtbiz_Admin->init_rtlib, Rt_Mailbox->__construct, Rt_Mailbox->db_upgrade, RT_DB_Update->do_upgrade, do_action('rt_db_update_finished'), call_user_func_array, Rtbiz_HD_Ticket_Creator_Migration->init, Rtbiz_HD_Ticket_Creator_Migration->ticket_creator_migration
